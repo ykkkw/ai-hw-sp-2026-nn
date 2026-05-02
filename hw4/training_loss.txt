@@ -1,0 +1,66 @@
+------MLP model------
+Using: cpu
+Train count: 48000
+Validation count: 12000
+Model: mlp | Params: 235,146
+Epoch  1/15 | Loss: 0.3453 | Train: 89.5% | Val: 95.3%
+Epoch  2/15 | Loss: 0.1615 | Train: 95.1% | Val: 96.3%
+Epoch  3/15 | Loss: 0.1278 | Train: 96.1% | Val: 96.5%
+Epoch  4/15 | Loss: 0.1114 | Train: 96.5% | Val: 97.2%
+Epoch  5/15 | Loss: 0.0972 | Train: 96.9% | Val: 97.1%
+Epoch  6/15 | Loss: 0.0855 | Train: 97.3% | Val: 97.3%
+Epoch  7/15 | Loss: 0.0804 | Train: 97.5% | Val: 97.6%
+Epoch  8/15 | Loss: 0.0714 | Train: 97.7% | Val: 97.4%
+Epoch  9/15 | Loss: 0.0707 | Train: 97.8% | Val: 97.4%
+Epoch 10/15 | Loss: 0.0686 | Train: 97.9% | Val: 97.7%
+Epoch 11/15 | Loss: 0.0664 | Train: 97.9% | Val: 98.0%
+Epoch 12/15 | Loss: 0.0607 | Train: 98.1% | Val: 97.6%
+Epoch 13/15 | Loss: 0.0586 | Train: 98.2% | Val: 97.8%
+Epoch 14/15 | Loss: 0.0577 | Train: 98.2% | Val: 97.6%
+Epoch 15/15 | Loss: 0.0575 | Train: 98.2% | Val: 97.9%
+Finish training! Best val accuracy: 98.0% at epoch 11
+
+------CNN model------
+Using: cpu
+Train count: 48000
+Validation count: 12000
+Model: cnn | Params: 914,698
+Epoch  1/15 | Loss: 0.1925 | Train: 93.9% | Val: 98.3%
+Epoch  2/15 | Loss: 0.0701 | Train: 97.9% | Val: 98.9%
+Epoch  3/15 | Loss: 0.0524 | Train: 98.5% | Val: 99.0%
+Epoch  4/15 | Loss: 0.0443 | Train: 98.7% | Val: 99.1%
+Epoch  5/15 | Loss: 0.0396 | Train: 98.8% | Val: 99.2%
+Epoch  6/15 | Loss: 0.0340 | Train: 99.0% | Val: 99.2%
+Epoch  7/15 | Loss: 0.0313 | Train: 99.0% | Val: 99.3%
+Epoch  8/15 | Loss: 0.0256 | Train: 99.2% | Val: 99.2%
+Epoch  9/15 | Loss: 0.0259 | Train: 99.2% | Val: 99.3%
+Epoch 10/15 | Loss: 0.0250 | Train: 99.2% | Val: 99.3%
+Epoch 11/15 | Loss: 0.0210 | Train: 99.3% | Val: 99.2%
+Epoch 12/15 | Loss: 0.0224 | Train: 99.3% | Val: 99.2%
+Epoch 13/15 | Loss: 0.0203 | Train: 99.4% | Val: 99.3%
+Epoch 14/15 | Loss: 0.0177 | Train: 99.4% | Val: 99.4%
+Epoch 15/15 | Loss: 0.0184 | Train: 99.4% | Val: 99.4%
+Finish training! Best val accuracy: 99.4% at epoch 15
+
+------Encoder model------
+Inside TransformerEncoderLayer set batch_first=True, other wise accuracy will only start at 10%;
+Using: cpu
+Train count: 48000
+Validation count: 12000
+Model: encoder | Params: 413,322
+Epoch  1/15 | Loss: 0.5173 | Train: 83.1% | Val: 92.6%
+Epoch  2/15 | Loss: 0.2453 | Train: 92.2% | Val: 94.4%
+Epoch  3/15 | Loss: 0.2119 | Train: 93.4% | Val: 94.4%
+Epoch  4/15 | Loss: 0.1842 | Train: 94.1% | Val: 95.1%
+Epoch  5/15 | Loss: 0.1674 | Train: 94.7% | Val: 95.7%
+Epoch  6/15 | Loss: 0.1600 | Train: 94.9% | Val: 95.4%
+Epoch  7/15 | Loss: 0.1505 | Train: 95.1% | Val: 95.5%
+Epoch  8/15 | Loss: 0.1379 | Train: 95.6% | Val: 96.6%
+Epoch  9/15 | Loss: 0.1294 | Train: 95.9% | Val: 96.2%
+Epoch 10/15 | Loss: 0.1274 | Train: 95.9% | Val: 96.4%
+Epoch 11/15 | Loss: 0.1212 | Train: 96.2% | Val: 96.1%
+Epoch 12/15 | Loss: 0.1141 | Train: 96.3% | Val: 96.8%
+Epoch 13/15 | Loss: 0.1096 | Train: 96.4% | Val: 96.3%
+Epoch 14/15 | Loss: 0.1001 | Train: 96.8% | Val: 96.8%
+Epoch 15/15 | Loss: 0.0999 | Train: 96.8% | Val: 97.1%
+Finish training! Best val accuracy: 97.1% at epoch 15
