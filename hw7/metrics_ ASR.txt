@@ -1,0 +1,10 @@
+==================================================
+ATTACK COMPARATIVE METRICS
+==================================================
+Model Path           : /Sofia-MSCS/sp26/AI/hw4/cnn_best.pt
+Recognition Rate    : 98.20%
+--------------------------------------------------
+FGSM Attack Success Rate    : 61.35%
+PGD Success Rate    : 83.67%
+Momentum I-FGSM Success Rate: 81.76%
+==================================================
