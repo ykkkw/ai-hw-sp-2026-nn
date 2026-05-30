@@ -144,9 +144,7 @@ gᵏ⁺¹ = μ · gᵏ + ∇ₓ J(xᵏ, y) / ‖∇ₓ J(xᵏ, y)‖₁
 xᵏ⁺¹ = Proj_{x,ε}( xᵏ + α · sign(gᵏ⁺¹) )
 ```
 
-**Advantage**: Momentum dampens oscillations caused by gradient sign changes across iterations, helping the attack escape poor local maxima. This is effective for transferability across models.
-<img width="1072" height="521" alt="hw7_asr_dark" src="https://github.com/user-attachments/assets/0599ffb2-5991-4ee8-a7e1-6e0610de2228" />
-<img width="1072" height="521" alt="image" src="https://github.com/user-attachments/assets/dac1bfe3-a9d4-4c05-a65f-0c7f36aa115f" />
+**Advantage**: Smoothed gradient path, and is the best for cross-model transfer.
 
 ---
 
