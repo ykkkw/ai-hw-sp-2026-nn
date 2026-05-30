@@ -17,7 +17,9 @@ A shallow fully-connected network. Flattens each image into a 784-dim vector and
 | Hidden 2 | Linear(256 → 128), ReLU, Dropout(0.3) |
 | Output | Linear(128 → 10) |
 
-**Why this structure**: MLP is the simplest possible baseline — no spatial assumptions, just raw pixel values fed through dense layers. Two hidden layers (256 → 128) give enough capacity to learn digit patterns while keeping the model lightweight. Dropout(0.3) prevents overfitting on the relatively small dataset.
+**Why this structure**: MLP is the simplest possible baseline — no spatial assumptions, just raw pixel values fed through dense layers. Two hidden layers (256 → 128) give enough capacity to learn digit patterns while keeping the model lightweight. Dropout(0.3) prevents overfitting on the relatively small dataset. 
+
+params = (784 × 256 + 256) + (256 × 128 + 128) + (128 * 10 + 10) = 235,146
 
 ---
 
@@ -32,6 +34,8 @@ Three convolutional blocks to extract spatial features, followed by a fully-conn
 
 **Why this structure**: CNNs exploit the spatial structure of images through local receptive fields and weight sharing, making them a natural fit for pixel grids. Stacking two conv blocks with progressive channel widening (1→32→64→128) lets the network learn low-level edges first, then higher-level shapes regardless of position. MaxPooling reduces spatial dimensions while retaining the most important features, and heavier Dropout(0.5) prevents overfitting.
 
+params = (1 * 32 * 3 * 3 + 32) + (32 * 64 * 3 * 3 + 64) + (64 * 128 * 3 * 3 + 128) + (3200 * 256 + 256) + (256 * 10 + 10) = 914,698
+
 ---
 
 ### 3. Transformer Encoder
@@ -45,6 +49,8 @@ Vision-Transformer-style encoder. Splits each image into horizontal patches, pro
 | Head | Linear(128 → 10) |
 
 **Why this structure**: The Transformer treats each horizontal strip of the image as a token, allowing self-attention to capture relationships across the full image where neither MLP nor CNN can do directly.
+
+params = (112 * 128 + 128) + 128 + 3 * [[4 * (128 * 128 + 128)] + [(128 * 256 + 256) + (256 * 128 + 128)] + (256 * 2)] + (128 * 10 + 10) = 413,322
 
 ---
 
