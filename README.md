@@ -181,7 +181,6 @@ xᵏ⁺¹ = Proj_{x,ε}( xᵏ + α · sign(gᵏ⁺¹) )
 - **PGD is the strongest attack** — 83.67% ASR with 20 iterations and random initialization thoroughly explores the ε-ball.
 - **MI-FGSM is close behind** at 81.76% — the momentum term stabilizes gradient direction, but with iters=20 and the same α, it converges similarly to PGD on MNIST.
 - **FGSM is the weakest** — a single step at ε=0.15 still fools 61% of correctly-classified samples, showing that even minimal perturbation can be highly effective on an undefended model.
-- All three attacks keep pixel perturbations within ε=0.15 — imperceptible or near-imperceptible to humans, yet highly effective against the CNN.
 
 ---
 
