@@ -19,7 +19,7 @@ A shallow fully-connected network. Flattens each image into a 784-dim vector and
 
 **Why this structure**: MLP is the simplest possible baseline — no spatial assumptions, just raw pixel values fed through dense layers. Two hidden layers (256 → 128) give enough capacity to learn digit patterns while keeping the model lightweight. Dropout(0.3) prevents overfitting on the relatively small dataset. 
 
-params = (784 × 256 + 256) + (256 × 128 + 128) + (128 * 10 + 10) = 235,146
+params = (784 * 256 + 256) + (256 * 128 + 128) + (128 * 10 + 10) = 235,146
 
 ---
 
