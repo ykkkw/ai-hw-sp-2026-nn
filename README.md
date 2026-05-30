@@ -30,7 +30,7 @@ Three convolutional blocks to extract spatial features, followed by a fully-conn
 | Conv Block 2 | Conv2d(64→128, k=3), MaxPool2d(2×2), Dropout(0.25) |
 | FC Head | Linear(3200→256), ReLU, Dropout(0.5), Linear(256→10) |
 
-**Why this structure**: CNNs exploit the spatial structure of images through local receptive fields and weight sharing, making them a natural fit for pixel grids. Stacking two conv blocks with progressive channel widening (1→32→64→128) lets the network learn low-level edges first, then higher-level shapes. MaxPooling after each block reduces spatial dimensions while retaining the most salient features, and heavier Dropout(0.5) on the FC head guards against overfitting.
+**Why this structure**: CNNs exploit the spatial structure of images through local receptive fields and weight sharing, making them a natural fit for pixel grids. Stacking two conv blocks with progressive channel widening (1→32→64→128) lets the network learn low-level edges first, then higher-level shapes regardless of position. MaxPooling reduces spatial dimensions while retaining the most important features, and heavier Dropout(0.5) prevents overfitting.
 
 ---
 
@@ -44,7 +44,7 @@ Vision-Transformer-style encoder. Splits each image into horizontal patches, pro
 | Transformer | 3 encoder layers, d_model=128, 4 heads, FFN dim=256, Dropout(0.1) |
 | Head | Linear(128 → 10) |
 
-**Why this structure**: The Transformer treats each horizontal strip of the image as a token, allowing self-attention to capture long-range relationships across the full image — something neither MLP nor CNN can do directly. A small d_model=128 with 4 heads keeps the model compact for MNIST's modest scale. The CLS token approach (borrowed from BERT) aggregates global context from all patches into a single vector for classification.
+**Why this structure**: The Transformer treats each horizontal strip of the image as a token, allowing self-attention to capture relationships across the full image where neither MLP nor CNN can do directly.
 
 ---
 
@@ -74,8 +74,8 @@ Vision-Transformer-style encoder. Splits each image into horizontal patches, pro
 
 ### Key Observations
 - **CNN wins** — spatial inductive bias (convolutions + pooling) is a natural fit for image data. Val accuracy hits 98.3% already at epoch 1.
-- **MLP performs surprisingly well** — 98.1% with only ~235K params and no spatial priors.
-- **Transformer is competitive but needs more** — 97% is solid, but lags because it lacks inductive bias and MNIST's 60K samples is modest for attention-based models. More epochs or data augmentation would likely close the gap.
+- **MLP performs well** — 98.1% with only ~235K params and no spatial priors.
+- **Transformer is competitive but needs more training** — 97% is solid, but lags because it lacks inductive bias and MNIST's 60K samples is modest for attention-based models. More epochs or data augmentation would likely close the gap.
 
 ### Per-class Accuracy
 
