@@ -121,10 +121,6 @@ hw4/
 ### 1. FGSM — Fast Gradient Sign Method
 A single-step attack. Computes the gradient of the loss w.r.t. the input, then shifts every pixel one step in the direction that maximally increases the loss.
 
-```
-x_adv = x + ε · sign(∇ₓ J(x, y))
-```
-
 **Advantage**: Fast — one forward + one backward pass per batch. Good baseline for measuring model robustness. The simplicity also means it's the weakest of the three.
 
 ---
@@ -132,23 +128,12 @@ x_adv = x + ε · sign(∇ₓ J(x, y))
 ### 2. PGD — Projected Gradient Descent (Iterative FGSM)
 Runs FGSM repeatedly for `K` iterations with a smaller step size `α`, projecting back into the ε-ball after each step. Starts from a random point within the ε-ball (random initialization) to avoid local optima.
 
-```
-x⁰   = x + uniform noise in [-ε, ε]
-xᵏ⁺¹ = Proj_{x,ε}( xᵏ + α · sign(∇ₓ J(xᵏ, y)) )
-```
-
 **Advantage**: Considered the strongest first-order attack. Iterating with projection ensures the adversarial example stays within a perceptually small ε-ball around the original image. More iterations = stronger attack at the cost of compute.
 
 ---
 
 ### 3. Momentum I-FGSM — Momentum Iterative FGSM
 Adds a momentum accumulator to I-FGSM. Instead of using the raw gradient each step, it maintains a running exponential average of past gradients (normalized by their L1 mean), which stabilizes the update direction across iterations.
-
-```
-g⁰   = 0
-gᵏ⁺¹ = μ · gᵏ + ∇ₓ J(xᵏ, y) / ‖∇ₓ J(xᵏ, y)‖₁
-xᵏ⁺¹ = Proj_{x,ε}( xᵏ + α · sign(gᵏ⁺¹) )
-```
 
 **Advantage**: Smoothed gradient path, and is the best for cross-model transfer.
 
