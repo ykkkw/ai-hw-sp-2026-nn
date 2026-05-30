@@ -154,13 +154,11 @@ xᵏ⁺¹ = Proj_{x,ε}( xᵏ + α · sign(gᵏ⁺¹) )
 |---------|-------|
 | Target model | CNN (HW4 best checkpoint) |
 | Epsilon (ε) | 0.15 |
-| PGD / MI-FGSM step size (α) | 2/255 ≈ 0.0078 |
+| PGD / MI-FGSM step size (α) | 0.15/20 ≈ 0.0078 |
 | PGD / MI-FGSM iterations | 20 |
 | MI-FGSM decay (μ) | 1.0 |
 | Test set | MNIST official test set (10,000 images) |
 | ASR denominator | Correctly classified samples only |
-
-> **Note on ASR**: ASR is computed only over samples the model classifies correctly before the attack — this isolates the attack's effectiveness from pre-existing model errors.
 
 ---
 
