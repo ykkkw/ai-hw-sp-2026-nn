@@ -70,9 +70,10 @@ Youtube link for walk through code: https://www.youtube.com/watch?v=ttesidRzbk0
 
 
 ## References
-
-- [PJM Hourly Energy Consumption — Kaggle](https://www.kaggle.com/datasets/robikscube/hourly-energy-consumption/data?select=DOM_hourly.csv)
+- [Kaggle data](https://www.kaggle.com/datasets/robikscube/hourly-energy-consumption/data?select=DOM_hourly.csv)
+- [Cyclical feature encoding](https://www.kaggle.com/code/avanwyk/encoding-cyclical-features-for-deep-learning)
 - [PyTorch nn.RNN docs](https://pytorch.org/docs/stable/generated/torch.nn.RNN.html)
 - [PyTorch nn.LSTM docs](https://pytorch.org/docs/stable/generated/torch.nn.LSTM.html)
+- [Sequence length](https://stackoverflow.com/questions/49573242/what-is-sequence-length-in-lstm)
 - [MinMaxScaler — scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html)
 - [R² score — scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.r2_score.html)
