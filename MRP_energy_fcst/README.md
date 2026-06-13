@@ -56,6 +56,8 @@ A sliding-window `Dataset` produces `(seq_len=24, input_features)` → `(1,)` sa
 
 ### Part V — Training & Evaluation
 Trained four models RNN base, RNN + feature, LSTM base, and LSTM+feature. Predictions are evaluated on RMSE, MAE, R², and MAPE.
+- RNN total parameters: 20,993
+- LSTM total parameters: 83,777 (~4 times RNN params since it has 4 gates)
 
 ---
 
